@@ -14,13 +14,13 @@ const convertSongsToStations = function(songsArray){
   return stations;
 }
 
-const mapStateToProps = function (state) {
+const mapStateToProps = function (state, ownProps) {
   return {
     stations: convertSongsToStations(state.songs)
   };
 };
 
-const mapDispatchToProps = function (dispatch) {
+const mapDispatchToProps = function (dispatch, ownProps) {
   return {};
 }
 

@@ -7,10 +7,12 @@ export default function (props) {
   const error = props.error;
   const handleChange = props.handleChange;
   const handleSubmit = props.handleSubmit;
+  const playlistId = props.playlistId;
+  const songId = props.songId;
 
   return (
     <div className="well">
-      <form className="form-horizontal" noValidate name="songSelect" onSubmit={handleSubmit}>
+      <form className="form-horizontal" noValidate name="songSelect" onSubmit={(event) => handleSubmit(event, playlistId, songId)}>
         <fieldset>
           <legend>Add to Playlist</legend>
           { error && <div className="alert alert-danger">Song is a duplicate</div> }

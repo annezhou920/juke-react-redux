@@ -4,7 +4,9 @@ export default function (props) {
 
   const songs = props.songs;
   const currentSong = props.currentSong;
+  // const currentSong = props.player.currentSong;
   const isPlaying = props.isPlaying;
+  // const isPlaying = props.player.isPlaying;
   const toggle = props.toggleOne;
 
   return (
@@ -19,7 +21,9 @@ export default function (props) {
       </thead>
       <tbody>
         {
-          songs && songs.map(song => (
+          songs && songs.map(song => {
+            //console.log(song.id, currentSong.id, isPlaying)
+            return (
             <tr key={song.id}>
               <td>
                 <button className="btn btn-default btn-xs" onClick={() => toggle(song, songs)}>
@@ -32,7 +36,7 @@ export default function (props) {
               </td>
               <td>{ song.genre }</td>
             </tr>
-          ))
+          )})
         }
       </tbody>
     </table>

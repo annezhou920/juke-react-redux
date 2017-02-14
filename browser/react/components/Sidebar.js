@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 export default function (props) {
 
   const playlists = props.playlists;
-
+  //console.log('props', playlists)
   return (
     <sidebar>
       <img src="juke.svg" className="logo"/>
@@ -40,7 +40,7 @@ export default function (props) {
       <hr />
       <ul className="list-unstyled">
         {
-          playlists.map(playlist => {
+        playlists.map(playlist => {
             return (
               <li key={playlist.id} className="playlist-item menu-item">
                 <Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>
